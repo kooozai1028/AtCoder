@@ -1,4 +1,3 @@
-# N = int(input())
 N = 112
 repdigit = [str(x)*3 for x in range(1,10)]
 
