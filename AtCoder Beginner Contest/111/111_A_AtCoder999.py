@@ -1,4 +1,3 @@
-# n = [x for x in str(1199)]
 n = [x for x in str(input())]
 add_stock = ''
 
