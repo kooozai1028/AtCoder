@@ -7,9 +7,5 @@ for i in h:
     print('i:'+str(i))
     if pre < i:
         ans += i - pre
-
     pre = i
-    print('ans:'+str(ans))
-    print('pre:'+str(pre))
-
 print(ans)
