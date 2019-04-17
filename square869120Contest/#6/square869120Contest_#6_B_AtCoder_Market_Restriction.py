@@ -1,7 +1,7 @@
 N = int(input())
 list = [list(map(int,input().split())) for _ in range(N)]
 
-min_val = 10**9
+min_val = float('inf')
 
 for en in range(1,100):
     for ex in range(en,101):
