@@ -1,3 +1,5 @@
+#サンプルは通るが、実行時エラーになる
+
 N,M = map(int,input().split())
 list = [list(map(int,input().split())) for i in range(N)]
 list.sort(key=lambda x:x[0])
