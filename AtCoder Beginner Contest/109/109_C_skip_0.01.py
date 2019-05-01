@@ -18,5 +18,4 @@ ans = list_dist[0]
 for x in list_dist[1:]:
     result = gcd(ans,x)
 
-print(list_dist[1:])
-print(ans)
+print(result)
