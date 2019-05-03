@@ -1,4 +1,5 @@
-#サンプルは通るが、実行時エラーになる
+import sys
+sys.setrecursionlimit(10**6)
 
 N,M = map(int,input().split())
 list = [list(map(int,input().split())) for i in range(N)]
