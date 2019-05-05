@@ -1,29 +1,33 @@
-N,K = map(int,input().split())
-S = list(input())
-print(S)
+N, K = map(int, input().split())
+S = input()
 
-start = 0
-intervals = []
-for i in range(1,len(S)):
-    if S[start] != S[i]:
-        intervals.append((start,i-1,i-1-start+1,S[start]))
-        start = i
-intervals.append((start,len(S)-1,i-1-start+1,S[start]))
+l = [0]
+curr = '1'
 
-intervals_0 = list(filter(lambda x:x[3]=='0',intervals))
-intervals_0.sort(key=lambda x:x[2],reverse=True)
-print(intervals_0)
-for i in range(K):
-    S[intervals_0[i][0]:intervals_0[i][1]+1] = ['1']*(intervals_0[i][1]+1-intervals_0[i][0])
-print(S)
-max_list = []
-cnt_1 = 0
-
-for s in S:
-    if s == '1':
-        cnt_1 += 1
+#0と1の塊を探索
+for c in S:
+    if c != curr:
+        l.append(1)
+        curr = c
     else:
-        max_list.append(cnt_1)
-        cnt_1 = 0
+        l[-1] += 1
+if curr == '0':
+    l.append(0)
 
-print(max(max_list))
+n_group = len(l) // 2
+sum_ = 0
+k = min(K, n_group)
+
+#初期値として左端から1の塊を算出
+for i in range(k):
+    sum_ += l[2 * i] + l[2 * i + 1]
+sum_ += l[2 * k]
+max_ = sum_
+
+#左端から0の塊を１つずつ取り替えて、最大値を算出
+for i in range(k, n_group):
+    sum_ -= l[2 * i - 2 * K] + l[2 * i + 1 - 2 * K]
+    sum_ += l[2 * i + 1] + l[2 * i + 2]
+    max_ = max(max_, sum_)
+
+print(max_)
