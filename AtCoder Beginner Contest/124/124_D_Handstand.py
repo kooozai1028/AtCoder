@@ -26,7 +26,7 @@ max_ = sum_
 
 #左端から0の塊を１つずつ取り替えて、最大値を算出
 for i in range(k, n_group):
-    sum_ -= l[2 * i - 2 * K] + l[2 * i + 1 - 2 * K]
+    sum_ -= l[2 * i - 2 * k] + l[2 * i + 1 - 2 * k]
     sum_ += l[2 * i + 1] + l[2 * i + 2]
     max_ = max(max_, sum_)
 
