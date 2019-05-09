@@ -1,0 +1,14 @@
+N = int(input())
+ 
+cnt = 0
+def dfs(n):
+    global cnt
+    if len(n) >= 11:
+        return 0
+    for s in '357':
+        dfs(n+s)
+    if int(n) <= N and '3' in n and '5' in n and '7' in n:
+        cnt += 1
+    return cnt
+ 
+print(dfs('0'))
