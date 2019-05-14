@@ -23,4 +23,4 @@ def dfs(cur, last3):
     memo[cur][last3] = ret
     return ret
 
-print(dfs(0, 'TTT'))
+print(dfs(0, '***'))
