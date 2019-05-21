@@ -1,0 +1,10 @@
+N,K=map(int,input().split())
+X=[0 for i in range(N)]
+for i in range(1,N+1):
+    j=i
+    tmp=1
+    while(j<K):
+        j*=2
+        tmp/=2
+    X[i-1]=tmp
+print(sum(X)/N)
